@@ -41,13 +41,13 @@
   font-style: italic;
 }
 /* 進行中（現在のステップ）: 強調 */
-.step-badge.sb-current-cl {
+.step-badge.sb-cl {
   background: #2a2a2a;
   color: white;
   outline: 2px solid #e74c3c;
   outline-offset: 1px;
 }
-.step-badge.sb-current-m {
+.step-badge.sb-m {
   background: #e74c3c;
   color: white;
   font-style: italic;
@@ -124,7 +124,13 @@
     </div>
     <div class="right-tools" style="display:flex;align-items:center;gap:10px;">
       <button style="background:none;border:none;color:#bbb;font-size:18px;cursor:pointer;padding:4px 6px;line-height:1;" title="設定">⚙</button>
-      <button style="background:none;border:none;color:#bbb;font-size:18px;cursor:pointer;padding:4px 6px;line-height:1;" title="ログアウト">↪</button>
+      <button style="background:none;border:none;cursor:pointer;padding:4px 6px;line-height:1;display:flex;align-items:center;" title="ログアウト">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="9" height="15" rx="1.5" stroke="#bbb" stroke-width="1.5" fill="none"/>
+          <path d="M11 6L15 9L11 12" stroke="#bbb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="7" y1="9" x2="15" y2="9" stroke="#bbb" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
   </div>
 
@@ -165,39 +171,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><!-- bldg --><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m" title="3.請求書発行">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl" title="4.振込/入金確認"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m" title="5.引渡連絡">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-current-cl" title="6.買取店受取連絡"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo" title="7.売主追加送金">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo" title="8.MOTA送金">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo" title="9.送金完了連絡">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#f0f0f0;color:#333;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">🏬 6.買取店受取連絡</span>
+                <span style="background:#f0f0f0;color:#333;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">🏬 5.引渡連絡・受取完了</span>
                 <div class="step-tooltip" id="tt1">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -215,39 +216,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-current-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 3.請求書発行</span>
+                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 4.入金確認</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -265,50 +261,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
-              <!-- サポートアイコン -->
-              <span class="support-icon" title="サポート案件">
-                <svg width="18" height="18" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="36" height="36" rx="6" fill="#c0392b"/>
-                  <path d="M18 6C11.37 6 6 11.37 6 18C6 24.63 11.37 30 18 30C24.63 30 30 24.63 30 18C30 11.37 24.63 6 18 6Z" fill="white" opacity="0.15"/>
-                  <path d="M13 13 L13 23 L16 20 L16 23 L23 13 Z" fill="white"/>
-                  <rect x="10" y="10" width="7" height="7" rx="1" fill="none" stroke="white" stroke-width="1.5"/>
-                  <rect x="19" y="19" width="7" height="7" rx="1" fill="none" stroke="white" stroke-width="1.5"/>
-                  <path d="M17 10 L26 10 L26 19" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                </svg>
-              </span>
-            </td>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
+                          </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-current-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#f0f0f0;color:#333;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">🏬 6.買取店受取連絡</span>
+                <span style="background:#f0f0f0;color:#333;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">🏬 5.引渡連絡・受取完了</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>3.請求書発行</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>4.振込/入金確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>5.引渡連絡</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>3.入金（請求書確認・支払い）</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>4.入金確認</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>5.引渡連絡・受取完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -326,39 +306,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-current-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 3.請求書発行</span>
+                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 4.入金確認</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -376,30 +351,19 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;background:#fafafa;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
-              <span class="support-icon" title="サポート案件">
-                <svg width="18" height="18" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="36" height="36" rx="6" fill="#c0392b"/>
-                  <path d="M13 13 L13 23 L16 20 L16 23 L23 13 Z" fill="white"/>
-                  <rect x="10" y="10" width="7" height="7" rx="1" fill="none" stroke="white" stroke-width="1.5"/>
-                  <rect x="19" y="19" width="7" height="7" rx="1" fill="none" stroke="white" stroke-width="1.5"/>
-                  <path d="M17 10 L26 10 L26 19" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-                </svg>
-              </span>
-            </td>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
+                          </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#bbb;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#bbb;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.4"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.4"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.4"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.4"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.4"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.4"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#aaa;font-size:11px;">※ キャンセル済</td>
@@ -412,39 +376,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-current-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 3.請求書発行</span>
+                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 4.入金確認</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -461,39 +420,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-current-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 3.請求書発行</span>
+                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 4.入金確認</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -510,39 +464,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-current-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 3.請求書発行</span>
+                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 4.入金確認</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -559,39 +508,34 @@
           <tr style="border-bottom:1px solid #e8e8e8;font-size:12px;">
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <strong>0000000</strong>
-              <span style="background:#c0392b;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:4px;">KSI</span>
+              <span style="display:inline-flex;align-items:center;justify-content:center;background:#c0392b;border-radius:3px;padding:2px 4px;margin-left:4px;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.0131 4.38667C1.64644 4.38667 1.34644 4.68667 1.34644 5.05333V11.7933C1.34644 12.16 1.64644 12.46 2.0131 12.46C2.37977 12.46 2.67977 12.16 2.67977 11.7933V5.05333C2.67977 4.68667 2.37977 4.38667 2.0131 4.38667Z" fill="white"/><path d="M14.0131 4.38667C13.6464 4.38667 13.3464 4.68667 13.3464 5.05333V11.7933C13.3464 12.16 13.6464 12.46 14.0131 12.46C14.3798 12.46 14.6798 12.16 14.6798 11.7933V5.05333C14.6798 4.68667 14.3798 4.38667 14.0131 4.38667Z" fill="white"/><path d="M12.1998 5.08667L10.6398 4.59333C10.1531 4.40667 9.5931 4.52 9.2131 4.89333L8.40644 5.7L7.3731 4.8C7.0331 4.5 6.56643 4.39333 6.1531 4.51333L3.8331 5.08C3.5331 5.15333 3.32644 5.42 3.32644 5.72667V11.1333C3.32644 11.3733 3.4531 11.5933 3.66644 11.7133L7.2531 13.74C7.46644 13.8733 7.7131 13.9333 7.9531 13.9333C8.1931 13.9333 8.43977 13.8667 8.6531 13.74C8.68643 13.72 8.72644 13.6933 8.7531 13.6667L10.4864 12.1C10.8731 12.3067 11.3064 12.3933 11.9931 12.3933C12.3598 12.3933 12.6598 12.0933 12.6598 11.7267V5.72C12.6598 5.42667 12.4731 5.17333 12.1931 5.08667H12.1998ZM7.93977 12.6L4.65977 10.74V6.24667L6.4931 5.8L7.4531 6.64L6.15977 7.93333C5.8531 8.24 5.68644 8.64667 5.68644 9.07333C5.68644 9.55333 5.90644 10.0133 6.2931 10.3333C6.92643 10.8467 7.88644 10.7733 8.4931 10.1733L8.9731 9.69333L9.2131 10.6467C9.2131 10.6467 9.22643 10.6933 9.2331 10.7133C9.2931 10.8733 9.3731 11.02 9.45977 11.16C9.46644 11.1733 9.4731 11.1933 9.48643 11.2067L7.93977 12.6067V12.6ZM11.3264 10.9933C11.2064 10.9667 11.1264 10.9267 11.0464 10.88C10.9864 10.8533 10.9198 10.8067 10.8398 10.7467C10.6864 10.62 10.5664 10.4533 10.4931 10.2667L9.9731 8.23333C9.95977 8.18667 9.93977 8.13333 9.91977 8.09333C9.82644 7.9 9.63977 7.76667 9.4331 7.72667C9.21977 7.68667 9.00643 7.76 8.8531 7.91333L7.54643 9.22C7.42643 9.34 7.2331 9.37333 7.1331 9.29333C7.05977 9.23333 7.0131 9.14667 7.0131 9.06667C7.0131 9.01333 7.02643 8.94 7.09977 8.87333L8.89977 7.07333L10.1931 5.84667L11.3198 6.20667V10.9933H11.3264Z" fill="white"/></svg></span>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">株式会社OOOOOO</td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-current-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl-todo"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m-todo">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl-todo" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white" opacity="0.5"/><rect x="4" y="7" width="4" height="4" fill="#b0b0b0"/><polygon points="6,0 11,4 1,4" fill="white" opacity="0.5"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m-todo" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
               <div class="step-tooltip-wrapper">
-                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 3.請求書発行</span>
+                <span style="background:#c0392b;color:white;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;cursor:default;">M 4.入金確認</span>
                 <div class="step-tooltip">
                   <div style="font-weight:700;margin-bottom:8px;color:#555;border-bottom:1px solid #eee;padding-bottom:6px;">査定番号：000000</div>
                   <div style="display:flex;flex-direction:column;gap:5px;">
                     <div style="display:flex;justify-content:space-between;gap:24px;"><span>1.成約情報登録</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認</span><span style="color:#888;">0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.請求書発行</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.振込/入金確認</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.買取店受取連絡</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.売主追加送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>8.MOTA送金</span><span>0000/00/00</span></div>
-                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>9.送金完了連絡</span><span>0000/00/00</span></div>
-                  </div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;"><span>2.成約情報確認 送信完了</span><span style="color:#888;">0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#c0392b;font-weight:700;"><span>3.入金（請求書確認・支払い）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>4.入金確認</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>5.引渡連絡・受取完了</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>6.送金対応（突合・確認完了）</span><span>0000/00/00</span></div>
+                    <div style="display:flex;justify-content:space-between;gap:24px;color:#aaa;"><span>7.完了</span><span>0000/00/00</span></div>                  </div>
                 </div>
               </div>
             </td>
@@ -611,15 +555,13 @@
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#aaa;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
@@ -636,15 +578,13 @@
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#aaa;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
@@ -661,15 +601,13 @@
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#aaa;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
@@ -686,15 +624,13 @@
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;color:#aaa;">山田太郎</td>
             <td style="padding:8px 14px;border-right:1px solid #f0f0f0;">
               <div class="step-row">
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">2</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">3</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">4</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">5</span></div>
-                <div class="step-group"><span class="step-badge sb-cl"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">6</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">7</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">8</span></div>
-                <div class="step-group"><span class="step-badge sb-m">M</span><span class="step-group-label">9</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="1.成約情報登録"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">1</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="2.成約情報確認 送信完了">M</span><span class="step-group-label">2</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="3.入金（請求書確認・支払い）"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">3</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="4.入金確認">M</span><span class="step-group-label">4</span></div>
+                <div class="step-group"><span class="step-badge sb-cl" title="5.引渡連絡・受取完了"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><rect x="1" y="4" width="10" height="7" rx="1" fill="white"/><rect x="4" y="7" width="4" height="4" fill="#2a2a2a"/><polygon points="6,0 11,4 1,4" fill="white"/></svg></span><span class="step-group-label">5</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="6.送金対応（突合・確認完了）">M</span><span class="step-group-label">6</span></div>
+                <div class="step-group"><span class="step-badge sb-m" title="7.完了">M</span><span class="step-group-label">7</span></div>
               </div>
             </td>
             <td style="padding:10px 14px;border-right:1px solid #f0f0f0;white-space:nowrap;">
