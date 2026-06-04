@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ログイン画面 | あんしん決済 Smart版</title>
+<link rel="stylesheet" href="../assets/common.css">
+<style>
+/* ===== login画面 専用（ulloログインフォームを踏襲） ===== */
+.lg-stage{background:#eef0f3;padding:40px 24px 56px;min-height:100vh;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;align-items:flex-start;}
+.lg-col{width:420px;max-width:100%;}
+.lg-badge{font-size:12px;font-weight:700;color:#888;margin-bottom:12px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px;}
+.lg-badge .tag{color:#fff;padding:4px 12px;border-radius:3px;font-size:11px;}
+.lg-card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.10);border:1px solid #e3e6ea;}
+.lg-head{padding:26px 28px 22px;text-align:center;}
+.lg-logo{font-size:30px;font-weight:900;letter-spacing:-1px;line-height:1;}
+.lg-sub{font-size:12px;margin-top:8px;opacity:.9;}
+.lg-body{padding:30px 32px 34px;}
+.lg-h1{font-size:18px;font-weight:700;margin-bottom:22px;text-align:center;color:#222;}
+.lg-field{margin-bottom:16px;}
+.lg-field label{font-size:12px;color:#555;font-weight:700;display:block;margin-bottom:6px;}
+.lg-field input{width:100%;border:1px solid #ccc;border-radius:5px;padding:13px 14px;font-size:15px;font-family:inherit;box-sizing:border-box;}
+.lg-field input:focus{outline:none;border-color:#888;}
+.lg-keep{margin:6px 0 22px;font-size:12px;display:flex;align-items:center;gap:6px;color:#555;cursor:pointer;}
+.lg-btn{width:100%;color:#fff;border:none;border-radius:6px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;}
+.lg-links{margin-top:20px;text-align:center;display:flex;flex-direction:column;gap:10px;}
+.lg-links a{font-size:13px;color:#1E56A0;text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="mock-backbar">
+  <a href="../index.html">← 画面一覧へ戻る</a>
+  <span class="sid">login</span><span class="nm">ログイン画面</span>
+</div>
+<div class="screen active" id="screen-login">
+  <div class="step-desc-bar">
+    <span class="step-desc-num">ログイン</span>
+    <span class="step-desc-title">ログイン画面 — ulloログインフォームを踏襲（ヘッダー／フッター・他者ログイン誘導は非表示）</span>
+    <span class="step-desc-actor">アクター：全アクター</span>
+  </div>
+
+  <div style="background:#fff8e1;border-bottom:1px solid #ffd54f;padding:10px 28px;font-size:12px;color:#856404;line-height:1.7;">
+    <strong>📌 本画面の見方：</strong>既存ullo（ユーザー／加盟店）のログインフォームを踏襲。<strong>ulloのグローバルヘッダー・フッター、ならびに「他方ログインへの誘導リンク」は表示しません。</strong>3アクター（ユーザー／加盟店／運営）の可変部分を3カラム並列で表示しています。ボタン文言は全て「ログイン」に統一。
+  </div>
+
+  <div class="lg-stage">
+
+    <!-- ===== ユーザーマイページ（CS／売主） ===== -->
+    <div class="lg-col">
+      <div class="lg-badge"><span class="tag" style="background:#E60012;">ユーザー（売主）</span><span>ullo ユーザーマイページ準拠</span></div>
+      <div class="lg-card">
+        <div class="lg-head" style="background:#E60012;">
+          <div class="lg-logo" style="color:#fff;">MOTA</div>
+          <div class="lg-sub" style="color:#fff;">車買取 ユーザーマイページ</div>
+        </div>
+        <div class="lg-body">
+          <div class="lg-h1">ログイン</div>
+          <div class="lg-field">
+            <label>メールアドレス</label>
+            <input type="email" placeholder="example@mota.jp">
+          </div>
+          <div class="lg-field">
+            <label>パスワード</label>
+            <input type="password" placeholder="">
+          </div>
+          <button class="lg-btn" style="background:#E60012;" onclick="showScreen('no-action-cs',null)">ログイン</button>
+          <div class="lg-links">
+            <a href="#">パスワードを忘れた方はこちら</a>
+            <a href="#">よくある質問はこちら</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 加盟店マイページ（CL／買取店）｜ヘッダー黒 ===== -->
+    <div class="lg-col">
+      <div class="lg-badge"><span class="tag" style="background:#1a1a1a;">加盟店（買取店）</span><span>ullo 加盟店マイページ準拠</span></div>
+      <div class="lg-card">
+        <div class="lg-head" style="background:#1a1a1a;">
+          <div class="lg-logo" style="color:#fff;">MOTA</div>
+          <div class="lg-sub" style="color:#cfcfcf;">車買取 加盟店マイページ</div>
+        </div>
+        <div class="lg-body">
+          <div class="lg-h1">ログイン</div>
+          <div class="lg-field">
+            <label>メールアドレス</label>
+            <input type="email" placeholder="shop@example.co.jp">
+          </div>
+          <div class="lg-field">
+            <label>パスワード</label>
+            <input type="password" placeholder="">
+          </div>
+          <label class="lg-keep"><input type="checkbox" style="width:14px;height:14px;cursor:pointer;"><span>ログイン状態を保持する</span></label>
+          <button class="lg-btn" style="background:#1a1a1a;" onclick="showScreen('prop-list-new',null)">ログイン</button>
+          <div class="lg-links">
+            <a href="#">パスワードを忘れた方はこちら</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 運営管理画面（MOTA）｜ヘッダー緑 ===== -->
+    <div class="lg-col">
+      <div class="lg-badge"><span class="tag" style="background:#1B8040;">運営（MOTA）</span><span>あんしん決済 運営管理</span></div>
+      <div class="lg-card">
+        <div class="lg-head" style="background:#1B8040;">
+          <div class="lg-logo" style="color:#fff;">MOTA</div>
+          <div class="lg-sub" style="color:#e6f3ea;">あんしん決済 運営管理画面</div>
+        </div>
+        <div class="lg-body">
+          <div class="lg-h1">ログイン</div>
+          <div class="lg-field">
+            <label>メールアドレス</label>
+            <input type="email" placeholder="staff@mota.inc">
+          </div>
+          <div class="lg-field">
+            <label>パスワード</label>
+            <input type="password" placeholder="">
+          </div>
+          <label class="lg-keep"><input type="checkbox" style="width:14px;height:14px;cursor:pointer;"><span>ログイン状態を保持する</span></label>
+          <button class="lg-btn" style="background:#1B8040;" onclick="showScreen('prop-list-new',null)">ログイン</button>
+          <div class="lg-links">
+            <a href="#">パスワードを忘れた方はこちら</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 可変部分まとめ表 -->
+  <div style="background:white;padding:24px 28px;border-top:1px solid #e0e0e0;">
+    <div style="font-size:14px;font-weight:700;margin-bottom:12px;">📊 アクター別の可変部分一覧</div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:800px;">
+        <thead>
+          <tr style="background:#1a1a1a;color:white;">
+            <th style="padding:10px 14px;border:1px solid #333;text-align:left;font-weight:700;">可変要素</th>
+            <th style="padding:10px 14px;border:1px solid #333;text-align:left;font-weight:700;background:#E60012;">ユーザー（売主）</th>
+            <th style="padding:10px 14px;border:1px solid #333;text-align:left;font-weight:700;background:#1a1a1a;">加盟店（買取店）</th>
+            <th style="padding:10px 14px;border:1px solid #333;text-align:left;font-weight:700;background:#1B8040;">運営（MOTA）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">準拠する既存画面</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ulloユーザーマイページ ログイン</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ullo加盟店マイページ ログイン</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">あんしん決済 運営管理（新規）</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">ヘッダー色</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">赤（MOTAレッド #E60012）</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">黒（#1a1a1a）</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">緑（#1B8040）</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">認証方式</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">メールアドレス＋パスワード</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">メールアドレス＋パスワード</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">メールアドレス＋パスワード</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">ボタン文言</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ログイン</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ログイン</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ログイン</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">非表示にした要素</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ulloヘッダー・フッター／「加盟店の方はこちら」誘導</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ulloヘッダー・フッター／「ユーザーの方はこちら」誘導</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">ヘッダー・フッターなし</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">ログイン状態を保持</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">なし</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">あり</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">あり</td></tr>
+          <tr><td style="padding:9px 14px;border:1px solid #e0e0e0;background:#f7f7f7;font-weight:700;">ログイン後の遷移先</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">CSマイページ（待機画面）</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">物件一覧（prop-list-new）</td><td style="padding:9px 14px;border:1px solid #e0e0e0;">物件一覧（prop-list-new）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="design-note" style="margin-top:20px;">
+      <strong>📌 設計メモ（ログイン画面）</strong>
+      ・既存ullo（<a href="https://autoc-one.jp/ullo/login/" target="_blank" rel="noopener">ユーザー</a>／<a href="https://autoc-one.jp/ullo/shop/login/" target="_blank" rel="noopener">加盟店</a>）のログインフォームを踏襲（メールアドレス＋パスワード＋ログイン）<br>
+      ・<strong>ulloのグローバルヘッダー・フッターは非表示</strong>。ログインフォーム本体のみ表示<br>
+      ・<strong>「他方ログインへの誘導リンク」を削除</strong>（ユーザー側＝加盟店誘導／加盟店側＝ユーザー誘導）<br>
+      ・ヘッダー色：ユーザー＝赤（MOTAレッド）／加盟店＝黒／運営＝緑<br>
+      ・<strong>ボタン文言は3アクターとも「ログイン」に統一</strong><br>
+      ・本モックは可変部分を3カラム並列表示（実装時は1コンポーネントで、アクセス元により表示切替）
+    </div>
+  </div>
+
+</div><!-- /screen-login -->
+<script src="../assets/common.js"></script>
+</body>
+</html>
