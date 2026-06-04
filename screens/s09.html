@@ -55,7 +55,10 @@
           <div style="font-size:18px;font-weight:700;margin-bottom:4px;">引渡連絡／受取完了</div>
           <div style="font-size:12px;color:#555;">車両の引渡しが完了したら、送金処理を進めてください。</div>
         </div>
-        <button onclick="showScreen('prop-detail-cl',null)" style="background:white;color:#1E56A0;border:1px solid #1E56A0;border-radius:3px;padding:7px 18px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;margin-top:4px;">📄 物件詳細を見る</button>
+        <div style="display:flex;gap:8px;margin-top:4px;">
+          <button onclick="showScreen('prop-list-new',null)" style="background:white;color:#555;border:1px solid #ccc;border-radius:3px;padding:7px 18px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">📋 物件一覧を見る</button>
+          <button onclick="showScreen('prop-detail-cl',null)" style="background:white;color:#1E56A0;border:1px solid #1E56A0;border-radius:3px;padding:7px 18px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">📄 物件詳細を見る</button>
+        </div>
       </div>
 
       <!-- 物件サマリー -->
@@ -77,16 +80,18 @@
       <!-- メイン：売主へ送金処理を進めるボタン（最大サイズ） -->
       <div style="background:#e8f5e9;border:2px solid #1D6B35;border-radius:6px;padding:24px 28px;margin-bottom:16px;">
         <div style="font-size:14px;color:#1a1a1a;line-height:1.9;margin-bottom:14px;">
-          鑑定・検査が完了し、車両・書類に問題がなければ<strong>「売主へ送金処理を進める」</strong>ボタンを押してください。<br>
+          鑑定・検査が完了し、車両・書類に問題がなければ<strong>「送金を進める」</strong>ボタンを押してください。<br>
           押下後、MOTAが売主への送金処理を行います。
         </div>
         <div style="background:#fff8e1;border:1px solid #ffd54f;border-radius:4px;padding:12px 16px;font-size:12px;color:#856404;margin-bottom:14px;line-height:1.9;">
           ⚠️ <strong>車両引渡し後3営業日以内を目安に押下してください。</strong><br>
           ※ 早期に押下いただいた場合でも、MOTA→売主への送金は、買取店からMOTAへの入金から4日後以降となります。
         </div>
-        <button onclick="if(confirm('「売主へ送金処理を進める」を実行します。\n\n⚠️ 一度送信すると取り消しできません。\nMOTAによる売主への送金処理が即時開始されます。\n車両・書類の内容を十分に確認してから実行してください。\n\nよろしいですか？'))alert('送金処理を開始しました。MOTAが売主への送金処理を実行します。')" style="background:#1D6B35;color:white;border:none;border-radius:6px;padding:18px 48px;font-size:18px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:10px;">
-          💰 売主へ送金処理を進める
+        <div style="text-align:center;">
+        <button onclick="if(confirm('「送金を進める」を実行します。\n\n⚠️ 一度送信すると取り消しできません。\nMOTAによる売主への送金処理が即時開始されます。\n車両・書類の内容を十分に確認してから実行してください。\n\nよろしいですか？'))alert('送金処理を開始しました。MOTAが売主への送金処理を実行します。')" style="background:#1D6B35;color:white;border:none;border-radius:6px;padding:18px 48px;font-size:18px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:10px;">
+          💰 送金を進める
         </button>
+        </div>
       </div>
 
       <!-- 減額（左）・キャンセル（右）セクション -->
@@ -98,7 +103,7 @@
             <span style="background:#e67e22;color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:2px;">買取金額変更</span>
             買取金額を変更する
           </div>
-          <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:12px;">売主との合意の上、依頼してください。依頼後、売主側に確認依頼が届き、確認完了後に減額が完了し送金に進みます。</div>
+          <div style="font-size:11px;color:#555;line-height:1.7;margin-bottom:12px;">売主との合意の上、依頼してください。依頼後、売主側に確認依頼が届き、確認完了後に買取金額の変更が完了し送金に進みます。</div>
           <button onclick="location.href='https://nnakatsuka.github.io/anshin-smart-mock/screens/prop-detail-cl-step1_2.html'" style="background:white;color:#e67e22;border:1px solid #e67e22;border-radius:3px;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;">買取金額を変更する</button>
         </div>
         <!-- キャンセル（右） -->
@@ -114,15 +119,7 @@
 
     </div>
 
-    <div class="design-note" style="margin-top:16px;">
-      <strong>📌 設計メモ（v61改修）</strong>
-      ・<strong>【v61】メインアクション文言変更</strong>：「受領連絡を送る」→「💰 売主へ送金処理を進める」（最大サイズ）<br>
-      ・<strong>【v61】減額（左）／キャンセル（右）に並べ替え</strong>。両方のボタンサイズを小さくして、メインアクションを際立たせる<br>
-      ・<strong>【v61】「一度送信すると取り消せません」を本文から削除</strong>→ 送金処理ボタン押下時の確認ダイアログに集約<br>
-      ・<strong>【v61】「物件詳細を見る」をh1見出し右側に配置</strong>（CLのSTEP画面共通）<br>
-      ・問題がある場合のみ買取店がキャンセル／減額依頼ボタンを押下 → 例外フロー（MOTA運用エスカレーション）<br>
-      ・<strong>MOTAアカウントログイン時</strong>：CL画面と同一の表示。強制的に送金処理を進める必要がある場合は物件詳細画面の「強制OK/NG入力」から対応
-    </div>
+
   </div>
 
   <div class="app-footer">
